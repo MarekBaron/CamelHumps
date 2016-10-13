@@ -17,6 +17,10 @@ namespace CamelHumps.Tests
         [TestCase("ALA", "ala", true)]
         [TestCase("ala", "alabaster", true)]
         [TestCase("ala", "alba", false)]
+        [TestCase("CreR", "CreateRoom", true)]
+        [TestCase("CreR", "CreateDoorRoom", false)]
+        [TestCase("CreDoR", "CreateDoorRoom", true)]
+        [TestCase("CDR", "CreateDoorRoom", true)]
         public void MatchTest(string aPattern, string aText, bool anExpectedResult)
         {
             CamelHumps.Match(aPattern, aText).Should().Be(anExpectedResult);
