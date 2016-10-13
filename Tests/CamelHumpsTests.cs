@@ -11,10 +11,15 @@ namespace CamelHumps.Tests
     [TestFixture]
     public class CamelHumpsTests
     {
-        [Test]
-        public void t()
+        [TestCase("", "Ala", true)]        
+        [TestCase("Ala", "Ala", true)]
+        [TestCase("Ala", "ala", true)]
+        [TestCase("ALA", "ala", true)]
+        [TestCase("ala", "alabaster", true)]
+        [TestCase("ala", "alba", false)]
+        public void MatchTest(string aPattern, string aText, bool anExpectedResult)
         {
-            (2 + 3).Should().Be(5, "bo tak");           
+            CamelHumps.Match(aPattern, aText).Should().Be(anExpectedResult);
         }
     }
 }
