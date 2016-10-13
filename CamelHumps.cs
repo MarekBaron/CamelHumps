@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CamelHumps
 {
-    public class Class1
+    public class CamelHumps
     {
     }
+
+
 }
